@@ -87,7 +87,13 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
+  },
+  {title:"The History of Cupcakes",
+  date: "The Hundredth Time Kimberly Smacked Her Head Against the Computer",
+  firstParagraph: "Cupcake ipsum dolor sit amet gummi bears halvah jujubes. Biscuit icing chupa chups cookie soufflé halvah lollipop lemon drops. Biscuit toffee I love pudding gummi bears cake",  
+  secondParagraph: "Chocolate cake tart pie bear claw I love jelly cotton candy tiramisu sugar plum. Halvah sweet roll brownie liquorice dragée. I love I love jelly-o gummi bears croissant bonbon liquorice. Sesame snaps biscuit icing biscuit wafer sugar plum halvah macaroon.",
+  thirdParagraph: "Pudding croissant muffin topping lemon drops toffee cupcake. Ice cream chocolate bonbon pastry danish. Carrot cake caramels liquorice pastry I love biscuit liquorice wafer marshmallow. Sesame snaps marzipan apple pie I love dessert danish halvah."
+}
 ];
 
 /*
@@ -149,8 +155,22 @@ function articleMaker( articleData) {
   span.className = "expandButton"
 
 //* Update text content
-title.textContent = "test"
+title.textContent = articleData.title;
+date.textContent = articleData.date;
+firstParagraph.textContent = articleData.firstParagraph;
+secondParagraph.textContent = articleData.secondParagraph;
+thirdParagraph.textContent = articleData.thirdParagraph;
+span.textContent = "+"
+
+
 
 return article;
 
 }
+
+const articlesDiv = document.querySelector(".articles");
+
+ data.forEach( item => {
+  const articleElem = articleMaker(item);
+  articlesDiv.appendChild(articleElem);
+})
