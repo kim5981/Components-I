@@ -131,8 +131,6 @@ const data = [
 
 function articleMaker( articleData) {
 
-  console.log("this should be the article data: ", articleData);
-
   //*Create the "stuffs" for the DOM 
   const article = document.createElement("div");
   const title = document.createElement("h2");
@@ -163,6 +161,12 @@ thirdParagraph.textContent = articleData.thirdParagraph;
 span.textContent = "+"
 
 
+//*--------- debugging ---------
+span.addEventListener("click", () => {
+  article.classList.toggle("article-open")
+})
+
+console.log(span);
 
 return article;
 
