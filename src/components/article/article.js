@@ -166,7 +166,7 @@ span.addEventListener("click", () => {
   article.classList.toggle("article-open")
 })
 
-console.log(span);
+// console.log(span);
 
 return article;
 
