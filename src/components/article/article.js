@@ -149,8 +149,10 @@ function articleMaker( articleData) {
   article.appendChild(span);
 
   //*Add class names
-  article.className = "className";
-  span.className = "expandButton"
+
+  article.classList.add("article");
+  date.classList.add("date");
+  span.classList.add("expandButton");
 
 //* Update text content
 title.textContent = articleData.title;
@@ -163,10 +165,8 @@ span.textContent = "+"
 
 //*--------- debugging ---------
 span.addEventListener("click", () => {
-  article.classList.toggle("article-open")
+  article.classList.toggle("article-open");
 })
-
-// console.log(span);
 
 return article;
 
@@ -174,7 +174,7 @@ return article;
 
 const articlesDiv = document.querySelector(".articles");
 
- data.forEach( item => {
-  const articleElem = articleMaker(item);
+ data.forEach( article => {
+  const articleElem = articleMaker(article);
   articlesDiv.appendChild(articleElem);
 })
